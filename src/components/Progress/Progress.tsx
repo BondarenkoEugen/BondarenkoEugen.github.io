@@ -18,7 +18,7 @@ function Progress({ cardIndex, active }: ProgressProps) {
       <div className={style.menuBlock}>
         <div className={style.buttonsContainer}>
           {gameConfig.money.map((reward, index) => (
-            <div className={style.buttonWrapper}>
+            <div key={reward} className={style.buttonWrapper}>
               <ProgressTab active={cardIndex === index}>
                 <span
                   className={classNames(

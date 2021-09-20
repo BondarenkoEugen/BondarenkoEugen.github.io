@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { NEXT_STEP_DELAY } from '../../constants/constants';
 import gameConfig from '../../gameConfig.json';
+import close from '../../images/close.svg';
+import menu from '../../images/menu.svg';
 import Progress from '../Progress/Progress';
 import QuizButton from '../QuizButton/QuizButton';
 import style from './GameScreen.module.css';
@@ -22,6 +24,7 @@ function GameScreen({ cardIndex, onCardIndexChange, onEnd }: GameScreenProps) {
   function nextLevel() {
     if (cardIndex > 10) {
       onEnd();
+      onCardIndexChange(cardIndex + 1);
       return;
     }
 
@@ -72,9 +75,7 @@ function GameScreen({ cardIndex, onCardIndexChange, onEnd }: GameScreenProps) {
         onClick={() => setMenuActive(!menuActive)}
         className={style.menuButton}
       >
-        <span />
-        <span />
-        <span />
+        {menuActive ? <img src={close} alt="closeMenu" /> : <img src={menu} alt="openMenu" />}
       </button>
     </div>
   );

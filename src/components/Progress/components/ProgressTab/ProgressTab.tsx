@@ -15,8 +15,6 @@ function ProgressTab({ children, active }: ProgressTabProps) {
     <div className={classNames(style.container, { [style.active]: active })}>
       <div className={style.imageHolder}>
         <svg
-          width=""
-          height=""
           viewBox="0 0 240 32"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
